@@ -1,0 +1,68 @@
+<h2 mat-dialog-title>{{ isEditMode ? 'Update Person' : 'Add Person' }}</h2>
+<mat-dialog-content>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" required>
+        <mat-error *ngIf="userForm.get('firstName')?.hasError('required')">
+          The fist name is required.
+        </mat-error>
+        <mat-error *ngIf="userForm.get('firstName')?.hasError('onlyLetters')">
+          Only letters are allowed.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name (P)</mat-label>
+        <input matInput formControlName="lastNameP" required>
+        <mat-error *ngIf="userForm.get('firstName')?.hasError('required')">
+          The Last name (P) is required.
+        </mat-error>
+        <mat-error *ngIf="userForm.get('firstName')?.hasError('onlyLetters')">
+          Only letters are allowed.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name (M)</mat-label>
+        <input matInput formControlName="lastNameM" required>
+        <mat-error *ngIf="userForm.get('firstName')?.hasError('required')">
+          The Last name (M) is required.
+        </mat-error>
+        <mat-error *ngIf="userForm.get('firstName')?.hasError('onlyLetters')">
+          Only letters are allowed.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Adress</mat-label>
+        <input matInput formControlName="address" required>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phone" required>
+        <mat-error *ngIf="userForm.get('phone')?.hasError('required')">
+          The phone number is required.
+        </mat-error>
+        <mat-error *ngIf="userForm.get('phone')?.hasError('pattern')">
+          Only numbers are allowed.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-dialog-actions style="display: flex; gap: 10px;">
+      <button class="example-button-container" mat-button type="button" (click)="onNoClick()">Cancel</button>
+      <button class="example-button-container" mat-button type="submit" color="primary">{{ isEditMode ? 'Update' : 'Add' }}</button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>

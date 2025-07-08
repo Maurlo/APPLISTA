@@ -1,0 +1,14 @@
+.table-container {
+  max-width: 70%; 
+  margin: 0 auto; 
+  padding: 16px; 
+}
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.small-search {
+  width: 300px;
+}
