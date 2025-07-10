@@ -42,10 +42,9 @@ testem.log
 Thumbs.db
 
 # node_modules
-/pruebaFrontend/node_modules
-/pruebaBackend/node_modules
+/node_modules
 # .angular
 /pruebaFrontend/.angular
 
 # dist
-/pruebaBackend/dist
+/dist
